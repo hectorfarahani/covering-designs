@@ -11,8 +11,9 @@ lies in at least one block. C(v,k,t) is the smallest possible number of blocks.
 
 ## What is new
 
-- **Two improved upper bounds:** C(29,17,4) ≤ 22 (previously 23) and C(32,18,4) ≤ 25 (previously 26).
-  Both previous records came from constructions and had stood since 2009.
+- **Four improved upper bounds:** C(29,17,4) ≤ 22 (previously 23), C(32,18,4) ≤ 25 (previously 26),
+  C(30,12,3) ≤ 29 (previously 30) and C(28,9,3) ≤ 55 (previously 56).
+  The first two previous records had stood since 2009, the last two since 1996.
 - **An open, reproducible GPU implementation** of weighting local search for covering designs: one complete search per
   32-thread warp, thousands of searches in parallel on a single consumer GPU, every result recounted independently on the CPU.
 - **A simple stand-alone verifier.** Anyone can check the designs in about a second with standard Python.
@@ -26,16 +27,21 @@ to covering designs, and the new bounds it produced.
 |---|---|---|---|---|
 | C(29,17,4) | **22** | 23 | Dynamic construction (LJCR, 2009) | 16 |
 | C(32,18,4) | **25** | 26 | Multiple of (16,9,4) covering (LJCR, 2009) | 21 |
+| C(30,12,3) | **29** | 30 | JCD article (LJCR, 1996) | 25 |
+| C(28,9,3) | **55** | 56 | JCD article (LJCR, 1996) | 50 |
 
 Previous best values as listed in the La Jolla Covering Repository archive (Zenodo record 19472830, v1.2, April 2026),
-and checked against the live tables at coveringrepository.com on 2026-10-20 (23 and 26 blocks).
+and checked against the live tables at coveringrepository.com on 2026-10-20 (23, 26, 30 and 56 blocks).
+C(30,12,3) and C(28,9,3) were added in v1.1.0.
 
 ## Verify (Python 3 standard library only, about one second)
 
     python verify.py 29 17 4 records/C29_17_4_22blocks.txt
     python verify.py 32 18 4 records/C32_18_4_25blocks.txt
+    python verify.py 30 12 3 records/C30_12_3_29blocks.txt
+    python verify.py 28 9 3 records/C28_9_3_55blocks.txt
 
-Both report `missing 0`. Each line of a record file is one block.
+All four report `missing 0`. Each line of a record file is one block.
 
 ## Method
 
@@ -54,6 +60,9 @@ local search for coverings (Nurmela and Östergård, 1993), row/clause weighting
 
 The designs above were found on one NVIDIA RTX 4080 with 256 parallel searches (random seed 7), in 54 s (C(29,17,4))
 and 71 s (C(32,18,4)), after the search had first reached the previous record size.
+C(30,12,3) at 29 was found with `src/covsearch_gpu_t.py`, 512 parallel searches (seed 7), in 6 s. C(28,9,3) at 55 was
+found with the same code, 1024 parallel searches (seed 43) and a degree floor of 16 (`dmin=16`: no point may lie in
+fewer than 16 blocks, the proven lower bound for the derived C(27,8,2)), in 28 s.
 
 ## Code
 
@@ -95,8 +104,10 @@ Designs and documentation: CC BY 4.0. Code: MIT. See `LICENSE`.
 
 ## Citation
 
-Farahani, H. (2026). covering-designs: new covering designs C(29,17,4) ≤ 22 and C(32,18,4) ≤ 25
-by GPU-parallel weighted local search (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.23489073
+Farahani, H. (2026). covering-designs: new covering designs C(29,17,4) ≤ 22, C(32,18,4) ≤ 25, C(30,12,3) ≤ 29 and
+C(28,9,3) ≤ 55 by GPU-parallel weighted local search (v1.1.0). Zenodo. https://doi.org/10.5281/zenodo.23489072
+
+Version 1.0.0 (C(29,17,4) and C(32,18,4) only): https://doi.org/10.5281/zenodo.23489073
 
 The concept DOI [10.5281/zenodo.23489072](https://doi.org/10.5281/zenodo.23489072) always resolves to the latest version.
 See also `CITATION.cff`.
