@@ -1,0 +1,10 @@
+name: covering-designs
+channels: [conda-forge]
+dependencies:
+  - python=3.11
+  - numpy
+  - pip
+  - pip:
+      - cupy-cuda12x
+      - nvidia-cuda-nvrtc-cu12
+      - nvidia-cuda-runtime-cu12

@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use these designs or this software, please cite them as below."
+title: "covering-designs: new covering designs C(29,17,4) <= 22 and C(32,18,4) <= 25 by GPU-parallel weighted local search"
+authors:
+  - family-names: Farahani
+    given-names: Hossein
+    email: research@hossein.pro
+    website: https://hossein.pro
+    orcid: "https://orcid.org/0009-0005-0297-8082"
+version: 1.0.0
+date-released: 2026-10-20
+license: MIT
+repository-code: "https://github.com/hectorfarahani/covering-designs"
+type: software
+keywords: [covering design, combinatorics, upper bound, local search, GPU, CUDA]
