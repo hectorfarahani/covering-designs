@@ -9,6 +9,17 @@ New covering designs found with GPU-parallel weighted local search, together wit
 A (v,k,t) covering design is a set of k-element subsets (blocks) of {1,...,v} such that every t-element subset
 lies in at least one block. C(v,k,t) is the smallest possible number of blocks.
 
+## What is new
+
+- **Two improved upper bounds:** C(29,17,4) ≤ 22 (previously 23) and C(32,18,4) ≤ 25 (previously 26).
+  Both previous records came from constructions and had stood since 2009.
+- **An open, reproducible GPU implementation** of weighting local search for covering designs: one complete search per
+  32-thread warp, thousands of searches in parallel on a single consumer GPU, every result recounted independently on the CPU.
+- **A simple stand-alone verifier.** Anyone can check the designs in about a second with standard Python.
+
+The search techniques themselves are established (see Method). The contribution is their GPU implementation, its application
+to covering designs, and the new bounds it produced.
+
 ## Results
 
 | Parameters | New size | Previous best | Previous method | Lower bound |
@@ -75,8 +86,8 @@ verified independently with `verify.py`, which anyone can rerun.
 ## Data sources and credit
 
 Previous bounds: La Jolla Covering Repository, D. M. Gordon, archived on Zenodo (record 19472830, v1.2), CC BY 4.0, and the
-live Covering Repository tables (coveringrepository.com). No previous designs were used as input. The new designs were
-built from random starting blocks.
+live Covering Repository tables (coveringrepository.com). No previous designs were used as input. Each search starts from random blocks and is then improved by the directed
+local search described under Method.
 
 ## Licence
 
