@@ -1,5 +1,7 @@
 # covering-designs
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23489072.svg)](https://doi.org/10.5281/zenodo.23489072)
+
 New covering designs found with GPU-parallel weighted local search, together with a stand-alone verifier and the search code.
 
 **Author:** Hossein Farahani ([hossein.pro](https://hossein.pro), research@hossein.pro, ORCID [0009-0005-0297-8082](https://orcid.org/0009-0005-0297-8082))
@@ -82,4 +84,8 @@ Designs and documentation: CC BY 4.0. Code: MIT. See `LICENSE`.
 
 ## Citation
 
-See `CITATION.cff`, or the Zenodo record linked from this repository's releases.
+Farahani, H. (2026). covering-designs: new covering designs C(29,17,4) ≤ 22 and C(32,18,4) ≤ 25
+by GPU-parallel weighted local search (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.23489073
+
+The concept DOI [10.5281/zenodo.23489072](https://doi.org/10.5281/zenodo.23489072) always resolves to the latest version.
+See also `CITATION.cff`.
