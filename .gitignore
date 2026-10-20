@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# run outputs that should not be committed by accident
+*.progress
+*.progress.json
+ckpt_*.json
+*.log
+
+# OS / editor files
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
+
+# local tool folders
+.claude/
