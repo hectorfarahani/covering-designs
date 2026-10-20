@@ -31,7 +31,8 @@ to covering designs, and the new bounds it produced.
 | C(28,9,3) | **55** | 56 | JCD article (LJCR, 1996) | 50 |
 
 Previous best values as listed in the La Jolla Covering Repository archive (Zenodo record 19472830, v1.2, April 2026),
-and checked against the live tables at coveringrepository.com on 2026-10-20 (23, 26, 30 and 56 blocks).
+and checked against the live tables at coveringrepository.com on 2026-10-20, before upload (23, 26, 30 and 56 blocks).
+All four designs have been listed in the live Covering Repository tables since 2026-10-20.
 C(30,12,3) and C(28,9,3) were added in v1.1.0.
 
 ## Verify (Python 3 standard library only, about one second)
@@ -58,7 +59,7 @@ local search for coverings (Nurmela and Östergård, 1993), row/clause weighting
   scoring of candidate swaps.
 - Every reported design is recounted independently on the CPU.
 
-The designs above were found on one NVIDIA RTX 4080 with 256 parallel searches (random seed 7), in 54 s (C(29,17,4))
+The designs above were found on a single consumer NVIDIA GPU with 256 parallel searches (random seed 7), in 54 s (C(29,17,4))
 and 71 s (C(32,18,4)), after the search had first reached the previous record size.
 C(30,12,3) at 29 was found with `src/covsearch_gpu_t.py`, 512 parallel searches (seed 7), in 6 s. C(28,9,3) at 55 was
 found with the same code, 1024 parallel searches (seed 43) and a degree floor of 16 (`dmin=16`: no point may lie in
@@ -105,7 +106,7 @@ Designs and documentation: CC BY 4.0. Code: MIT. See `LICENSE`.
 ## Citation
 
 Farahani, H. (2026). covering-designs: new covering designs C(29,17,4) ≤ 22, C(32,18,4) ≤ 25, C(30,12,3) ≤ 29 and
-C(28,9,3) ≤ 55 by GPU-parallel weighted local search (v1.1.0). Zenodo. https://doi.org/10.5281/zenodo.23489072
+C(28,9,3) ≤ 55 by GPU-parallel weighted local search (v1.1.1). Zenodo. https://doi.org/10.5281/zenodo.23489072
 
 Version 1.0.0 (C(29,17,4) and C(32,18,4) only): https://doi.org/10.5281/zenodo.23489073
 
