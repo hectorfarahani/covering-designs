@@ -273,7 +273,7 @@ def run(P, R, nb, dmin, seconds, seed, starts=None, start_labels=None, stall_s=6
                           blocks=[[int(e) + 1 for e in sorted(b)] for b in bl]))
     return dict(params=dict(v=P.v, k=P.k, t=P.t, R=R, nb=nb, dmin=dmin, seconds=seconds, seed=seed, stall_s=stall_s,
                             tenure=S.tenure, kicks=kicks),
-                elapsed_s=el, moves=moves, moves_per_s=moves / el, hist=hist,
+                elapsed_s=el, moves=moves, moves_per_s=moves / max(el, 1e-9), hist=hist,
                 gpu_matches_cpu=all(f['missing'] == f['gpu_missing'] for f in final), final=final)
 
 
