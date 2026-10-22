@@ -7,7 +7,7 @@ authors:
     email: research@hossein.pro
     website: https://hossein.pro
     orcid: "https://orcid.org/0009-0005-0297-8082"
-version: 1.2.0
+version: 1.3.0
 date-released: 2026-10-22
 license: [MIT, CC-BY-4.0]
 repository-code: "https://github.com/hectorfarahani/covering-designs"

@@ -2,8 +2,8 @@
 Proven values: C(10,6,4)=20, C(8,4,3)=14, C(7,3,2)=7. The search must solve at the value and never below it."""
 import sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
-import covsearch_gpu_t, covsearch_gpu_t64
-for CT in (covsearch_gpu_t, covsearch_gpu_t64):
+import covsearch_gpu_t, covsearch_gpu_t64, covsearch
+for CT in (covsearch_gpu_t, covsearch_gpu_t64, covsearch):
   print(CT.__name__)
   for (v, k, t, val) in [(10, 6, 4, 20), (8, 4, 3, 14), (7, 3, 2, 7)]:
       P = CT.Problem(v, k, t)
